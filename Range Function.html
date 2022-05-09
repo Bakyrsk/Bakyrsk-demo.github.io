@@ -1,0 +1,27 @@
+def my_range(m,n):
+    l = []
+    while m < n:
+        l.append(m)
+        m += 1
+    print(l)
+
+
+conversion_table = {0: '0', 1: '1', 2: '2', 3: '3', 4: '4',
+                    5: '5', 6: '6', 7: '7',
+                    8: '8', 9: '9', 10: 'a', 11: 'b', 12: 'c',
+                    13: 'd', 14: 'e', 15: 'f'}
+
+
+conversion_small = {0: '00', 1: '01', 2: '02', 3: '03', 4: '04',
+                    5: '05', 6: '06', 7: '07',
+                    8: '08', 9: '09', 10: '0a', 11: '0b', 12: '0c',
+                    13: '0d', 14: '0e', 15: '0f'}
+
+def to_hex(x):
+    if x < 256:
+        hex = ''
+        while(x > 0):
+            rem = x % 16
+            hex = conversion_table[rem] + hex
+            x = x // 16
+        return hex
